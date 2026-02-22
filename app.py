@@ -3,7 +3,7 @@ import easyocr
 import numpy as np
 from PIL import Image
 import re
-import pyttsx3
+
 
 st.title("AI Smart Product Scanner")
 
@@ -23,10 +23,7 @@ def extract_info(text):
 
     return expiry, mrp, allergens
 
-def speak(text):
-    engine = pyttsx3.init()
-    engine.say(text)
-    engine.runAndWait()
+
 
 if uploaded_file:
     image = Image.open(uploaded_file)
@@ -44,4 +41,4 @@ if uploaded_file:
     st.write("Allergens:", allergens)
 
     speech_text = f"Expiry {expiry}. MRP {mrp}. Allergens {allergens}"
-    speak(speech_text)
+   
