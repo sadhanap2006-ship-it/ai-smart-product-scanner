@@ -31,6 +31,7 @@ if uploaded_file:
 
     result = reader.readtext(img_array, detail=0)
     full_text = " ".join(result)
+    st.write("Full OCR Text:", full_text)
 
     expiry, mrp, allergens = extract_info(full_text)
 
