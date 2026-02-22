@@ -41,4 +41,14 @@ if uploaded_file:
     st.write("Allergens:", allergens)
 
     speech_text = f"Expiry {expiry}. MRP {mrp}. Allergens {allergens}"
+
+    st.markdown(
+        f"""
+        <script>
+        var msg = new SpeechSynthesisUtterance("{speech_text}");
+        window.speechSynthesis.speak(msg);
+        </script>
+        """,
+        unsafe_allow_html=True
+    )
    
